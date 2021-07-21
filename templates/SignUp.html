@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://designing-world.com/apland-5.1.1/register.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Apland - App Landing Page Template">
+    <meta name="author" content="Designing World">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Title-->
+    <title>Apland - App Landing Template</title>
+    <!-- Favicon-->
+    <link rel="icon" href="https://designing-world.com/apland-5.1.1/img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="https://designing-world.com/apland-5.1.1/img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://designing-world.com/apland-5.1.1/img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://designing-world.com/apland-5.1.1/img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://designing-world.com/apland-5.1.1/img/icons/icon-180x180.png">
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="/static/LogIn/css/css2" rel="stylesheet">
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="/static/LogIn/style.css">
+    <!-- Web App Manifest-->
+    <link rel="manifest" href="https://designing-world.com/apland-5.1.1/manifest.json">
+  </head>
+  <body>
+    <!-- Preloader-->
+    <!-- Night Mode Area-->
+    <!--
+    <div class="night-mode-wrapper position-fixed shadow-lg d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="View dark/default mode">
+      <div class="form-check p-0 m-0">
+        <input class="form-check-input p-0 m-0" id="darkSwitch" type="checkbox" value="">
+        <label class="form-check-label" for="darkSwitch"></label>
+      </div>
+      <div class="night-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        </svg>
+      </div>
+      <div class="default-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+        </svg>
+      </div>
+    </div>-->
+    <!-- Register Area-->
+    <div class="register-area d-flex">
+      <div class="register-content-wrapper d-flex align-items-center">
+        <div class="register-content">
+          <!-- Logo--><a class="logo" href="https://designing-world.com/apland-5.1.1/index.html"><img src="./Apland - App Landing Template_files/logo.png" alt=""></a>
+          <h5>创建一个新的账号？</h5>
+          <p>已经有账号了？<a href="/LogIn/">登录</a></p>
+          <!-- Form-->
+          <div class="register-form" style="width:350px">
+            <form action="/SignUp/" method="post">
+                {% csrf_token %}
+              {% if message %}
+                  <div class="alert alert-warning">{{ message }}
+                  {% if success %}
+                      <a href="/LogIn/">登录</a>
+                      {% endif %}
+                  </div>
+              {% endif %}
+              <div class="form-group mb-3"><i class="lni-user"></i>
+                <input class="form-control shadow-sm" type="text" name = "username" placeholder="Full Name">
+              </div>
+              <div class="form-group mb-3"><i class="lni-envelope"></i>
+                <input class="form-control shadow-sm" type="text" name = "phonenumber" placeholder="Phone Number">
+              </div>
+              <div class="form-group mb-3"><i class="lni-lock"></i>
+                <input class="form-control shadow-sm" type="password" name = "password" placeholder="Password">
+              </div>
+              <button class="btn btn-success w-100" type="submit">注册</button>
+            </form>
+          </div>
+
+          <!-- Footer Copwrite Area-->
+          <div class="footer-bottom">
+            <p>Made with <i class="lni-heart"> </i> by  <a href="https://wrapbootstrap.com/user/DesigningWorld">YYT & ZXT</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Register Side Content-->
+      <div class="register-side-content bg-img" style="background-image: url(/static/LogIn/img/hero-6.jpg);"></div>
+    </div>
+    <!-- jQuery(necessary for all JavaScript plugins without bootstrap js)-->
+    <script src="/static/LogIn/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/LogIn/js/jquery.min.js"></script>
+    <script src="/static/LogIn/js/classy-nav.min.js"></script>
+    <script src="/static/LogIn/js/one-page-nav.js"></script>
+    <script src="/static/LogIn/js/scrollup.min.js"></script>
+    <script src="/static/LogIn/js/waypoints.min.js"></script>
+    <script src="/static/LogIn/js/jquery.easing.min.js"></script>
+    <script src="/static/LogIn/js/jquery.animatedheadline.min.js"></script>
+    <script src="/static/LogIn/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/LogIn/js/owl.carousel.min.js"></script>
+    <script src="/static/LogIn/js/jarallax.min.js"></script>
+    <script src="/static/LogIn/js/jarallax-video.min.js"></script>
+    <script src="/static/LogIn/js/jquery.counterup.min.js"></script>
+    <script src="/static/LogIn/js/jquery.countdown.min.js"></script>
+    <script src="/static/LogIn/js/wow.min.js"></script>
+    <script src="/static/LogIn/js/mail.js"></script>
+    <!-- All plugins activation code-->
+    <script src="/static/LogIn/js/active.js"></script><a id="scrollUp" href="https://designing-world.com/apland-5.1.1/register.html#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="lni-chevron-up"></i></a>
+    <script src="/static/LogIn/js/dark-mode-switch.js"></script>
+    <script src="/static/LogIn/js/pwa.js"></script>
+  
+</body></html>
