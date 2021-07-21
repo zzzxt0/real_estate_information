@@ -40,4 +40,14 @@ class RenthouseItem(models.Model):
     floor = models.CharField(max_length=10)  # 楼层
     chaoxiang = models.CharField(max_length=10)  # 朝向
 
+# 用户信息
+class User(models.Model):
+    # 客户名称
+    name = models.CharField(max_length=200)
+
+    # 联系电话
+    phoneNumber = models.CharField(max_length=200)
+
+    # 密码
+    passWord = models.CharField(max_length=200)
 
