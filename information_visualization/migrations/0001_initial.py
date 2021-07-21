@@ -56,7 +56,6 @@ class Migration(migrations.Migration):
                 ('price', models.CharField(max_length=100)),
                 ('floor', models.CharField(max_length=10)),
                 ('chaoxiang', models.CharField(max_length=10)),
-                ('location', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(

@@ -54,3 +54,18 @@ def SignUp(request):
 
         return render(request, 'SignUp.html', {"message": message})
     return render(request, 'SignUp.html')
+
+# 显示全部二手房信息
+def showershou(request):
+    houseinfo = models.HouseInfo.objects.filter()
+    return render(request, '.html', {'houseinfo': houseinfo})
+
+# 显示全部新房信息
+def shownewhouse(request):
+    newhouse = models.NewhouseItem.objects.filter()
+    return render(request, '.html', {'newhouse': newhouse})
+
+# 显示全部出租房信息：
+def showrenthouse(request):
+    renthouse = models.RenthouseItem.objects.filter()
+    return render(request, '.html', {'renthouse': renthouse})
