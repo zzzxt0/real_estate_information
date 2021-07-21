@@ -716,7 +716,8 @@
                                                     {% if message %}
                                                         <div class="alert alert-warning">{{ message }}</div>
                                                     {% endif %}
-                                                    <form action="/FindHouse/AddHouse/?username={{username}}" method="post">
+                                                    <!--/?username={{username}}-->
+                                                    <form action="/FindHouse/AddHouse/" method="post">
                                                     {% csrf_token %}
 
                                                         <div class="mb-3">
@@ -755,16 +756,16 @@
                                                             <div class="col-md-4">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" style="width:100%;float:left">电梯配置</label>
-                                                                    <p style="width:50%;float:left"><input type="radio" name="Elevator">带电梯</p>
-                                                                    <p style="width:50%;float:left"><input type="radio" name="Elevator">不带电梯</p>
+                                                                    <p style="width:50%;float:left"><input type="radio" name="Elevator" value="带电梯">带电梯</p>
+                                                                    <p style="width:50%;float:left"><input type="radio" name="Elevator" value="不带电梯">不带电梯</p>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="minPrice" style="width:100%;float:left">装修配置</label>
                                                                     <p style="width:30%;float:left"><input type="radio" name="renovation">精装修</p>
-                                                                    <p style="width:30%;float:left"><input type="radio" name="optradio">普通装修</p>
-                                                                    <p style="width:30%;float:left"><input type="radio" name="optradio">毛坯</p>
+                                                                    <p style="width:30%;float:left"><input type="radio" name="renovation">普通装修</p>
+                                                                    <p style="width:30%;float:left"><input type="radio" name="renovation">毛坯</p>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
