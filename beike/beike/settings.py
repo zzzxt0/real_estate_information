@@ -1,4 +1,4 @@
-# Scrapy settings for lianjia project
+# Scrapy settings for beike project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,17 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'lianjia'
+BOT_NAME = 'beike'
 
-SPIDER_MODULES = ['lianjia.spiders']
-NEWSPIDER_MODULE = 'lianjia.spiders'
+SPIDER_MODULES = ['beike.spiders']
+NEWSPIDER_MODULE = 'beike.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'lianjia (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'lianjia.middlewares.LianjiaSpiderMiddleware': 543,
+#    'beike.middlewares.BeikeSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'lianjia.middlewares.LianjiaDownloaderMiddleware': 543,
+#    'beike.middlewares.BeikeDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'lianjia.pipelines.LianjiaPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'beike.pipelines.BeikePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -86,9 +86,11 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('.'))))
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'real_estate_information.settings'
 # 手动初始化Django：
 import django

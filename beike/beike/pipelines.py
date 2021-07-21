@@ -8,7 +8,7 @@
 from itemadapter import ItemAdapter
 
 
-class LianjiaPipeline:
+class BeikePipeline:
     def process_item(self, item, spider):
         item.save()
         return item
